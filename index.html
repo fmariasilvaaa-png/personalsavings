@@ -528,26 +528,15 @@ input, textarea, [contenteditable="true"] {
 </div>
 
 <script>
-    // Dados iniciais (como no teu código)
-    let data = JSON.parse(localStorage.getItem('financas_data_rev') || 'null') || {
-        currentYear: 2026,
-        extrato: [
-            { id: 1, origem: 'Revolut 2,5%', obs: 'Francisco', credito: 4852, debito: 0, color: '#1977f2' },
-            { id: 2, origem: 'Millennium', obs: 'Maria João', credito: 6000, debito: 0, color: '#ff3b30' },
-            { id: 3, origem: 'ETF Portfolio', obs: 'Ações Globais', credito: 180, debito: 0, color: '#00d44b' },
-        ],
-        fundo: [
-            { id: 1, origem: 'Certificados Aforro', valor: 2886.31, color: '#ff9500' },
-        ],
-        pendentes: [
-            { id: 1, origem: 'Ajudas Mãe', valor: 1100, pago: false, color: '#ff9500' },
-            { id: 2, origem: 'IRS Mensal', valor: 1635, pago: false, color: '#a855f7' },
-        ],
-        rendimentos: [
-            { id: 1, origem: 'Francisco', liqMensal: 1517.38, sAlim: 230.12, color: '#1977f2' },
-            { id: 2, origem: 'Maria João', liqMensal: 1293, sAlim: 224.40, color: '#ff3b30' },
-        ]
-    };
+// Tenta carregar do localStorage. Se não existir (primeira vez), cria estrutura vazia.
+const savedData = localStorage.getItem('financas_data_rev');
+let data = savedData ? JSON.parse(savedData) : {
+    currentYear: new Date().getFullYear(),
+    extrato: [],
+    fundo: [],
+    pendentes: [],
+    rendimentos: []
+};
 
     let currentTab = 'extrato';
     let editingType = null;
