@@ -454,6 +454,12 @@
 <body>
 <div class="splash-overlay" id="splashScreen">POUPANÇA</div>
 
+    <div class="lock-screen" id="lockScreen" style="display:none;">
+    <div class="main-balance-label">INTRODUZA O CÓDIGO</div>
+    <input type="password" id="pinField" class="pin-input" inputmode="numeric" maxlength="4" autocomplete="one-time-code">
+    <button class="btn-main" style="width: auto; margin-top: 30px; padding: 10px 30px;" onclick="tryFaceID()">Usar Face ID</button>
+    </div>
+    
 <div class="app-shell">
     <header class="rev-header">
         <div class="main-balance-container">
