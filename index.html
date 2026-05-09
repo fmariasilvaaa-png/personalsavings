@@ -10,6 +10,20 @@
     <title>Finanças | Revolut Style</title>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+
+        /* Impede a seleção de texto em toda a app */
+* {
+    -webkit-user-select: none; /* Safari iOS */
+    user-select: none;
+    -webkit-touch-callout: none; /* Impede o menu de "Copiar Imagem" ao manter premido */
+}
+
+/* Permite a seleção apenas em campos de entrada de dados */
+input, textarea, [contenteditable="true"] {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
         :root {
             --bg: #000000;
             --surface: #121212;
