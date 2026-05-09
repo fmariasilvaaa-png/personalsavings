@@ -35,9 +35,11 @@
 
         /* Container Principal */
         .app-shell {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
          .scroll-area {
@@ -224,21 +226,19 @@
             font-size: 20px;
             cursor: pointer;
             padding: 0 4px;
-.item-menu {
-    position: fixed;
-    display: none;
-    min-width: 140px; /* Um pouco mais largo para facilitar o toque */
-    background: var(--surface-light); /* Mais claro para destacar do fundo */
-    border: 1px solid var(--accent); /* Borda com a cor de destaque */
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    z-index: 1000; /* Valor alto para ficar à frente de tudo */
-    overflow: hidden;
-}
-
-.item-menu.open { 
-    display: block; 
-}
+        }
+        .item-menu {
+            position: fixed;
+            display: none;
+            min-width: 120px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+            z-index: 300;
+            overflow: hidden;
+        }
+        .item-menu.open { display: block; }
         .item-menu button {
             width: 100%;
             text-align: left;
